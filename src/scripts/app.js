@@ -1,3 +1,3 @@
 const a = () => {
-  console.log("ssssssdfsdfadsdfffssdssdsdasdf");
+  console.log("123");
 }

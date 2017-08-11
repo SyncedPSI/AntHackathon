@@ -5,7 +5,6 @@ const minifycss = require('gulp-minify-css');
 const rename = require('gulp-rename');
 const notify = require('gulp-notify');
 const sourcemaps = require('gulp-sourcemaps');
-const concat = require('gulp-concat');
 const imagemin = require('gulp-imagemin');
 const webpack = require('webpack-stream');
 const connect = require('gulp-connect');
@@ -28,12 +27,11 @@ gulp.task('connect', () => {
 
 // compiler and compress less
 gulp.task('styles', () => {
-  gulp.src('./src/styles/**/*.less')
+  gulp.src('./src/styles/app.less')
     .pipe(sourcemaps.init())
     .pipe(less())
     .on('error', notify.onError('Error: <%= error.message %>'))
     .pipe(autoprefixer())
-    .pipe(concat('app.css'))
     .pipe(gulp.dest('./dist/styles'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())

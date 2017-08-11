@@ -1,3 +1,41 @@
+@header-h: 70px;
+
 .header {
-  
+  height: @header-h;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    .ant-logo(50px)
+  }
+
+  &__local {
+    display: inline-block;
+    margin-right: 25px;
+  }
+
+  &__open {
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid #fff;
+  }
+}
+
+.nav {
+  height: @header-h;
+  display: flex;
+  align-items: center;
+
+  &__item {
+    padding: 0 10px;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
 }
