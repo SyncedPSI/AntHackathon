@@ -1,9 +1,12 @@
 .banner {
-  padding: 80px 0;
+  padding: @header-h + 80px 0 80px;
   background-image: url('@{images}/element-01.png'), url('@{images}/element-02.png');
   background-size: 600px, 600px;
   background-position: -50px -400px, top -52px right -180px;
   background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 
   &__topic {
     font-family: 'PingFang SC';
