@@ -59,7 +59,7 @@ gulp.task('html', () => {
 gulp.task('watch', () => {
   gulp.watch('./src/styles/**/*.less', ['styles']);
   gulp.watch('./src/images/**/*', ['images']);
-  gulp.watch('./src/**/*', ['html']);
+  gulp.watch('./src/**/*.pug', ['html']);
 });
 
 

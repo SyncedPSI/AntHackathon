@@ -1,3 +1,6 @@
-const a = () => {
-  console.log("123");
-}
+import $ from 'jquery';
+import banner from './banner';
+
+$(() => {
+  banner();
+});

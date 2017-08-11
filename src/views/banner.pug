@@ -7,8 +7,14 @@ section.banner#banner
     .banner__topic-second
       .banner__title 支付宝小程序开发者大赛 
       .banner__title-en Alipay Mini-program Hackathon
-    .banner__countdown.countdown
-      | 00:00:00:00
+    .banner__countdown.countdown#js-countdown
+      span.days-num.item 00
+      span :
+      span.hrs-num.item 00
+      span :
+      span.mins-num.item 00
+      span :
+      span.secs-num.item 00
     a.banner__apply(href="javascript:;")
       | 报名参加
     .banner__hint.t-pink
