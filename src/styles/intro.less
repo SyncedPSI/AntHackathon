@@ -2,23 +2,78 @@
 
 .intro {
   &__content {
-    padding: 20px;
+    padding: 20px 0;
     line-height: 1.5;
   }
 
-  &__zone {
-    background-image: url('@{images}/zone.png');
-    background-size: @zone-w;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: @zone-w * 505 / 1440 - 120px;
+  .section-list__content {
+    position: relative;
+    margin: 2rem 0;
   }
 
-  &__zone-us,
-  &__zone-zh {
-    width: 50%;
+  .section-three__inline {
+    margin-bottom: 2rem;
+    padding: 1.6rem 2rem;
+    border-radius: 5px;
+    background-color: #050912;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: -4px;
+      bottom: -4px;
+      left: -4px;
+      right: -4px;
+      content: '';
+      z-index: -1;
+      border-radius: 5px;
+      background: -webkit-linear-gradient(45deg, @color-cn , @color-en);
+    }
+  }
+
+  .inline-header {
+    margin-bottom: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__logo {
+      height: 57px;
+      vertical-align: middle;
+    }
+  }
+
+  .inline-header.ant-cloud-header {
+    padding: 10px 0;
+
+    img {
+      height: 37px;
+    }
+  }
+
+  .header-title {
     display: inline-block;
-    margin-top: 40px;
-    padding-left: 50px;
+    line-height: .9;
+    margin-left: 1rem;
+
+    &.ant-title {
+      margin-top: .5rem;
+      padding: .5rem 1rem;
+      border-left: 1px solid #fff;
+    }
+
+    &__cn {
+      display: block;
+      font-size: 2rem;
+    }
+
+    &__en {
+      font-size: 0.5rem;
+    }
+  }
+
+  .inline__description {
+
   }
 }

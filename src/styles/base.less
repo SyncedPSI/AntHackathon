@@ -3,6 +3,8 @@
 
 @pink: #e62e8b;
 @blue: #00a0e9;
+@color-cn: #4B94CC;
+@color-en: #d22f7d;
 
 @header-h: 70px;
 
@@ -66,4 +68,38 @@ a {
   width: @height * 228 / 111;
   background-size: cover;
   background-image: url('@{images}/ant-white-logo.png');
+}
+
+.section-list__content {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  .section__inline {
+    width: 45%;
+    margin-right: 10%;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  .section-three__inline {
+    width: 30%;
+    margin-right: 5%;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  .section-five__inline {
+    width: 20%;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

@@ -1,0 +1,214 @@
+.rules {
+  background-image: url('@{images}/element-04.png'), url('@{images}/element-05.png');
+  background-size: 190px, 300px;
+  background-position: -66px 3px,top 800px right -12px;
+  background-repeat: no-repeat;
+
+  p {
+    margin: 0;
+  }
+
+  .rules__content {
+    margin-top: 3.5rem;
+  }
+
+  .section__inline {
+    margin-bottom: 1rem;
+    color: @color-cn;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+      color: @color-en;
+    }
+
+    .section__title {
+      font-size: 2.4rem;
+    }
+
+    .section__image img {
+      width: 100%;
+    }
+
+    .rules-section__title, .rules__title {
+      font-size: 2.8rem;
+      margin: 3rem 0 1rem 0;
+      padding: 1rem 0;
+    }
+
+    .rules__title {
+      padding: 6rem 0 0rem 100px;
+      margin: 0;
+      background-image: url('@{images}/icon.png');
+      background-size: 120px;
+      background-repeat: no-repeat;
+      background-position: 0 -224px;
+      background-position: 0 -745px;
+    }
+  }
+
+  .rules-decription {
+    display: flex;
+    line-height: 2rem;
+
+    &__tag {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    &__title {
+      display: inline-block;
+    }
+  }
+
+  .rules-prize__content {
+    .prize__ranking {
+      position: absolute;
+      font-size: 2rem;
+      text-align: center;
+      background-image: url('@{images}/icon.png');
+      width: 10rem;
+      background-size: 120px;
+      background-repeat: no-repea;
+      background-position: 11px -543px;
+      padding: 0 1rem;
+    }
+  }
+  .prize__detail {
+    padding-left: 11rem;
+    line-height: 2rem;
+
+    h1 {
+      font-weight: normal;
+      font-size: 1.6rem;
+
+      strong {
+        font-size: 2.8rem;
+        font-weight: normal;
+      }
+    }
+
+    p {
+      margin: 0.3rem 0;
+    }
+  }
+
+  .rules-prize__btn {
+    margin: 2rem 0 5rem 0;
+    text-align: center;
+    border: 2px solid #000;
+    padding: 1.5rem;
+    border-radius: 5px;
+    position: relative;
+    background-color: #050912;
+
+    div {
+      background-image: -webkit-linear-gradient(45deg, @color-cn , @color-en);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &::after {
+      position: absolute;
+      top: -4px;
+      bottom: -4px;
+      left: -4px;
+      right: -4px;
+      content: '';
+      z-index: -1;
+      border-radius: 5px;
+      background: -webkit-linear-gradient(45deg, @color-cn , @color-en);
+    }
+  }
+
+  .rules-base {
+    margin: 1.4rem 0;
+
+    .section-list__content {
+      padding: 2rem 0;
+      border: 2px solid @color-cn;
+      border-top: none;
+      border-radius: 0 0 5px 5px;
+    }
+
+    &__icon {
+      background-image: url('@{images}/icon.png');
+      background-size: 80px;
+      background-repeat: no-repeat;
+      height: 40px;
+      margin-left: 3rem;
+      margin-bottom: .5rem;
+    }
+    .icon-2 {
+      background-position: 0 -576px;
+    }
+    .icon-3 {
+      background-position: 0 -224px;
+    }
+    .icon-4 {
+      background-position: 0 -183px;
+    }
+    .icon-5 {
+      background-position: 0 -262px;
+    }
+    .icon-6 {
+      background-position: 0 -43px;
+    }
+    .icon-7 {
+      background-position: 0 -87px;
+    }
+    .icon-8 {
+      background-position: 0 -134px;
+    }
+
+
+    &__decription {
+      text-align: center;
+    }
+  }
+
+  .rules-base__title {
+    overflow: hidden;
+
+    span {
+      padding: .8rem 2rem .5rem 1rem;
+      border-left: 2px solid;
+      border-top: 2px solid;
+      border-radius: 5px 33px 0 0;
+      position: absolute;
+    }
+
+    p {
+      height: 2.6rem;
+      margin-left: 92px;
+      border-bottom: 2px solid;
+      border-radius: 0 0 0 37px;
+    }
+  }
+
+  .content-en {
+    .rules-base__title {
+      color: @color-en;
+    }
+
+    .section-list__content {
+      border-color: @color-en;
+      padding: 2rem 3rem;
+    }
+    .prize__ranking {
+      background-position: 2px -626px;
+      background-size: 130px;
+    }
+
+    .rules__title {
+      background-position: 0px -631px;
+    }
+
+
+  }
+
+  .section-three__inline {
+    .rules-base__icon {
+      margin-left: 4.4rem;
+    }
+  }
+}

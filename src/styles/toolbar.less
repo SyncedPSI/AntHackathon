@@ -1,0 +1,60 @@
+.toolbar-item(@pos, @hoverPos) {
+  background-position: 0 @pos;
+
+  &:hover {
+    background-position: 0 @hoverPos;
+  }
+}
+.toolbar {
+  position: fixed;
+  top: 50%;
+  margin-top: -130px;
+  right: 20px;
+
+  .item {
+    display: block;
+    width: 46px;
+    height: 46px;
+    border: 2px solid #ff6905;
+    border-radius: 8px;
+    background-image: url('@{images}/toolbar.png');
+    margin-top: .6rem;
+
+    &:hover {
+      .toolbar-layer {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .item-ding {
+    .toolbar-item(0, -49px)
+  }
+  .item-wechat {
+    .toolbar-item(-102px, -155px)
+  }
+  .item-headlines {
+    .toolbar-item(-360px, -310px)
+  }
+  .item-sina {
+    .toolbar-item(-263px, -211px)
+  }
+  .item-sohu {
+    .toolbar-item(101px, 51px)
+  }
+
+  .toolbar-layer {
+    position: absolute;
+    right: 48px;
+    margin-top: -1rem;
+    transform-origin: top right;
+    transform: scale(0);
+    transition: all .4s;
+
+    p {
+      color: #4e4e4e;
+      margin: 0;
+      font-size: 1rem;
+    }
+  }
+}
