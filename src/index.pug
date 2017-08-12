@@ -1,11 +1,11 @@
 extends layout.pug
+block variables
+  - var title = '蚂蚁开发者大赛'
+  - var action = 'page-home'
 block content
-  include ./views/header.pug
-  include ./views/banner.pug
-  include ./views/intro.pug
-  include ./views/schedule.pug
-  include ./views/rules.pug
-  include ./views/sponsor.pug
-  include ./views/toolbar.pug
-  include ./views/footer.pug
+  include ./views/home/banner.pug
+  include ./views/home/intro.pug
+  include ./views/home/schedule.pug
+  include ./views/home/rules.pug
+  include ./views/home/sponsor.pug
   #js-starsBox.stars-box

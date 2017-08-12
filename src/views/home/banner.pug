@@ -1,12 +1,6 @@
 section.category.banner#banner
   .container.banner__container.t-center
-    .banner__topic.text-pingfang
-      .banner__date 2017
-      .banner__title 蚂蚁开发者大赛
-      .banner__title-en Ant Technology Developer Challenge
-    .banner__topic-second.text-pingfang
-      .banner__title 支付宝小程序开发者大赛 
-      .banner__title-en Alipay Mini-program Hackathon
+    +solgan
     .banner__countdown.text-pingfang.countdown#js-countdown
       span.days-num.item(data-title="DAYS") 00
       span :
@@ -15,7 +9,7 @@ section.category.banner#banner
       span.mins-num.item(data-title="MINUTES") 00
       span :
       span.secs-num.item(data-title="SECONDS") 00
-    a.banner__apply(href="javascript:;")
+    a.banner__apply(href="/apply.html" target="_blank")
       | 报名参加
     .banner__hint.t-pink
       | 《《《 报名结束入口将关闭 》》》

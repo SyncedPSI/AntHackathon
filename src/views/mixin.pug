@@ -1,0 +1,36 @@
+mixin module-title(title)
+  .module-title
+    = title
+
+mixin solgan
+  .solgan
+    .solgan__topic.text-pingfang
+      .solgan__date 2017
+      .solgan__title 蚂蚁开发者大赛
+      .solgan__title-en Ant Technology Developer Challenge
+    .solgan__topic-second.text-pingfang
+      .solgan__title 支付宝小程序开发者大赛 
+      .solgan__title-en Alipay Mini-program Hackathon
+
+
+mixin rules-desc(isApply)
+  .rules-desc
+    .rules-desc__content
+      .rules-desc__inline
+        if !isApply
+          p.rules-desc__title 中国赛区（杭州）
+          .rules-desc__image
+            image(src="../images/rules-cn.png")
+        .rules-desc__rules
+          image(src="../images/prize-cn.png")
+
+      .rules-desc__inline
+        if !isApply
+          p.rules-desc__title 美国赛区（硅谷）
+          .rules-desc__image
+            image(src="../images/rules-en.png")
+        .rules-desc__rules
+          image(src="../images/prize-en.png")
+    .rules-desc__prize
+      image(src="../images/prize-shortlisted.png")
+  

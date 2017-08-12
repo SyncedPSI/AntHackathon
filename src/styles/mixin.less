@@ -1,0 +1,64 @@
+.module-title {
+  background-image: url('@{images}/title-label.png');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  padding-left: 40px;
+  font-size: 3rem;
+}
+
+.solgan {
+  &__topic {
+    font-size: 6rem;
+    margin-bottom: 20px;
+
+    .solgan__title-en {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__topic-second {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+    .solgan__title-en {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+
+.rules-desc {
+  img {
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__inline {
+    margin-bottom: 2rem;
+    width: 45%;
+    color: @color-cn;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+      color: @color-en;
+    }
+  }
+
+  &__title {
+    font-size: 2.4rem;
+  }
+
+  &__rules {
+    margin-top: 5rem;
+  }
+
+  &__prize {
+    margin: 2rem 0 5rem 0;
+  }
+}

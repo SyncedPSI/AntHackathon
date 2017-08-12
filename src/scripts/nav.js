@@ -29,7 +29,8 @@ const navState = () => {
     }
   });
 
-  $category.on('click', function () {
+  $category.on('click', function (e) {
+    e.preventDefault();
     const $this = $(this);
     scrollTo({
       selector: $item.eq($this.data('index')),

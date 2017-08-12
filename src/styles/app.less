@@ -1,16 +1,29 @@
 @import '../../node_modules/normalize.css/normalize.css';
 
-@import 'textfont.less';
-@import 'base.less';
+@import './textfont.less';
+@import './base.less';
+@import './mixin.less';
 
 // shared
-@import 'module-title.less';
+@import './shared/header.less';
+@import './shared/footer.less';
+@import './shared/toolbar.less';
 
-@import 'header.less';
-@import 'banner.less';
-@import 'toolbar.less';
-@import 'intro.less';
-@import 'rules.less';
-@import 'sponsor.less';
-@import 'schedule.less';
-@import 'footer.less';
+
+.page-home {
+  color: #fff;
+  background: #000 url('@{images}/bg.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  @import './home/banner.less';
+  @import './home/intro.less';
+  @import './home/rules.less';
+  @import './home/sponsor.less';
+  @import './home/schedule.less';
+}
+
+.page-apply {
+
+  @import './apply/banner.less';
+}

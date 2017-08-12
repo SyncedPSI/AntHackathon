@@ -50,7 +50,7 @@ gulp.task('images', () => {
 
 // diff views
 gulp.task('html', () => {
-  gulp.src('./src/index.pug')
+  gulp.src(['./src/index.pug', './src/apply.pug'])
     .pipe(pug())
     .pipe(gulp.dest('./dist'))
     .pipe(connect.reload());
