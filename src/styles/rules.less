@@ -72,49 +72,62 @@
       background-position: 11px -543px;
       padding: 0 1rem;
     }
+  }
+  .prize__detail {
+    padding-left: 11rem;
+    line-height: 2rem;
 
-    .prize__detail {
-      padding-left: 11rem;
-      line-height: 2rem;
+    h1 {
+      font-weight: normal;
+      font-size: 1.6rem;
 
-      h1 {
+      strong {
+        font-size: 2.8rem;
         font-weight: normal;
-        font-size: 1.6rem;
-
-        strong {
-          font-size: 2.8rem;
-          font-weight: normal;
-        }
       }
+    }
 
-      p {
-        margin: 0.3rem 0;
-      }
+    p {
+      margin: 0.3rem 0;
     }
   }
 
   .rules-prize__btn {
-    border-radius: 5px;
     margin: 2rem 0 5rem 0;
     text-align: center;
     border: 2px solid #000;
-    background-image: -webkit-linear-gradient(45deg, @color-cn , @color-en);
-    border-image: -webkit-linear-gradient(45deg, @color-cn , @color-en) 4;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     padding: 1.5rem;
+    border-radius: 5px;
+    position: relative;
+    background-color: #050912;
+
+    div {
+      background-image: -webkit-linear-gradient(45deg, @color-cn , @color-en);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &::after {
+      position: absolute;
+      top: -4px;
+      bottom: -4px;
+      left: -4px;
+      right: -4px;
+      content: '';
+      z-index: -1;
+      border-radius: 5px;
+      background: -webkit-linear-gradient(45deg, @color-cn , @color-en);
+    }
   }
 
   .rules-base {
     margin: 1.4rem 0;
 
-    &__title {
-      padding: .5rem 1rem;
-    }
-
     .section-list__content {
       padding: 2rem 0;
       border: 2px solid @color-cn;
+      border-top: none;
+      border-radius: 0 0 5px 5px;
     }
 
     &__icon {
@@ -153,7 +166,30 @@
     }
   }
 
+  .rules-base__title {
+    overflow: hidden;
+
+    span {
+      padding: .8rem 2rem .5rem 1rem;
+      border-left: 2px solid;
+      border-top: 2px solid;
+      border-radius: 5px 33px 0 0;
+      position: absolute;
+    }
+
+    p {
+      height: 2.6rem;
+      margin-left: 92px;
+      border-bottom: 2px solid;
+      border-radius: 0 0 0 37px;
+    }
+  }
+
   .content-en {
+    .rules-base__title {
+      color: @color-en;
+    }
+
     .section-list__content {
       border-color: @color-en;
       padding: 2rem 3rem;
@@ -166,6 +202,8 @@
     .rules__title {
       background-position: 0px -631px;
     }
+
+
   }
 
   .section-three__inline {

@@ -14,9 +14,21 @@
   .section-three__inline {
     margin-bottom: 2rem;
     padding: 1.6rem 2rem;
-    border: 3px solid red;
     border-radius: 5px;
-    border-image: -webkit-linear-gradient( -45deg, @color-cn , @color-en) 30 30;
+    background-color: #050912;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: -4px;
+      bottom: -4px;
+      left: -4px;
+      right: -4px;
+      content: '';
+      z-index: -1;
+      border-radius: 5px;
+      background: -webkit-linear-gradient(45deg, @color-cn , @color-en);
+    }
   }
 
   .inline-header {
@@ -30,13 +42,13 @@
       height: 57px;
       vertical-align: middle;
     }
+  }
 
-    &.ant-cloud-header {
-      padding: 10px 0;
+  .inline-header.ant-cloud-header {
+    padding: 10px 0;
 
-      img {
-        height: 37px;
-      }
+    img {
+      height: 37px;
     }
   }
 
@@ -64,5 +76,4 @@
   .inline__description {
 
   }
-
 }
