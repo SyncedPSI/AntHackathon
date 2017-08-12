@@ -9,10 +9,10 @@ const imagemin = require('gulp-imagemin');
 const webpack = require('webpack-stream');
 const connect = require('gulp-connect');
 const pug = require('gulp-pug');
-
+const fontmin = require( 'gulp-fontmin');
 
 gulp.task('scripts', () => {
-  return gulp.src('./src/scripts/**/*')
+  gulp.src('./src/scripts/**/*')
     .pipe(webpack(require('./webpack.config.js')))
     .pipe(gulp.dest('./dist/scripts'))
 });
@@ -43,18 +43,31 @@ gulp.task('styles', () => {
 // compress images
 gulp.task('images', () => {
   gulp.src('./src/images/**/*')
-  .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-  .pipe(gulp.dest('./dist/images/'))
-  .pipe(connect.reload());
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+    .pipe(gulp.dest('./dist/images/'))
+    .pipe(connect.reload());
 });
 
 // diff views
 gulp.task('html', () => {
   gulp.src('./src/index.pug')
-  .pipe(pug())
-  .pipe(gulp.dest('./dist'))
-  .pipe(connect.reload());
+    .pipe(pug())
+    .pipe(gulp.dest('./dist'))
+    .pipe(connect.reload());
 });
+
+
+gulp.task('font', () => {
+  gulp.src('./src/font/*.ttf')
+    .pipe(fontmin({
+        text: '0123456789 ABCDEFGHIGKLMNOPQRSTUVWXYZ abcdefghigklmnopqrstuvwxyz\
+        蚂蚁开发者大赛 \
+        支付宝小程序开发者大赛\
+        《《《 报名结束入口将关闭 》》》'
+    }))
+    .pipe(gulp.dest('./dist/font'))
+});
+
 
 gulp.task('watch', () => {
   gulp.watch('./src/styles/**/*.less', ['styles']);
@@ -63,5 +76,5 @@ gulp.task('watch', () => {
 });
 
 
-gulp.task('default', ['connect', 'html', 'styles', 'images', 'scripts', 'watch']);
+gulp.task('default', ['connect', 'html', 'styles', 'images', 'font', 'scripts', 'watch']);
 gulp.task('build', ['styles', 'images', 'scripts']);
