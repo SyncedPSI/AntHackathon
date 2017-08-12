@@ -67,3 +67,37 @@ a {
   background-size: cover;
   background-image: url('@{images}/ant-white-logo.png');
 }
+
+.section-list__content {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  .section__inline {
+    width: 40%;
+    margin-right: 5%;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  .section-three__inline {
+    width: 30%;
+    margin-right: 5%;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  .section-five__inline {
+    width: 20%;
+  }
+}
+
+
+
+
+
+
