@@ -2,31 +2,42 @@
 
 .intro {
   &__content {
-    padding: 20px;
+    padding: 20px 0;
     line-height: 1.5;
   }
 
   .section-list__content {
     position: relative;
-    margin: 2rem -1rem 0 -1rem;
-    padding-left: 0.4rem;
+    margin: 2rem 0;
   }
 
   .section-three__inline {
     margin-bottom: 2rem;
-    font-size: 2rem;
-    line-height: 2rem;
     padding: 10px;
-    border-radius: 2px;
+    border: 3px solid red;
+    border-radius: 5px;
+    border-image: -webkit-linear-gradient( -45deg, @color-cn , @color-en) 30 30;
   }
 
-  .inline__header {
-    .header__logo {
+  .inline-header {
+    margin-bottom: 1rem;
+
+    &__logo {
 
     }
+  }
 
-    .header__title {
+  .header-title {
+    display: inline-block;
+    line-height: 1;
 
+    &__cn {
+      display: block;
+      font-size: 1.8rem;
+    }
+
+    &__en {
+      font-size: 0.5rem;
     }
   }
 
