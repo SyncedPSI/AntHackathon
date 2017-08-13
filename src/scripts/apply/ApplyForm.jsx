@@ -3,24 +3,43 @@ import Input from './Input';
 import SendCodeBtn from './SendCodeBtn';
 import SelectCity from './SelectCity';
 
+import { validation } from 'value-validate';
+
 class ApplyForm extends React.Component {
   state = {
-    name: '',
-    city: '',
-    phone: '',
-    code: '',
-    email: '',
-    company: '',
-    job: '',
-    industry: '',
-    intro: ''
+    name: { value: '', status: 'default', msg: '', rules: ['required'] },
+    phone: { value: '', status: 'default', msg: '', rules: ['required', 'phone'] },
+    code: { value: '', status: 'default', msg: '', rules: ['required'] },
+    email: { value: '', status: 'default', msg: '', rules: ['required', 'email'] },
+    company: { value: '', status: 'default', msg: '', rules: ['required'] },
+    job: { value: '', status: 'default', msg: '', rules: ['required'] },
+    industry: { value: '', status: 'default', msg: '', rules: ['required'] },
+    city: { value: '', status: 'default', msg: '', rules: ['required'] },
+    intro: { value: '', status: 'default', msg: '', rules: ['required'] }
+  }
+
+  onSubmit = () => {
+    ['name', 'code', 'email', 'company', 'job', 'industry', 'city', 'intro'].forEach(type => {
+      this.verify(this.state[type].value, type);
+    })
   }
 
   valueChange = (value, type) => {
-    this.setState({ [type]: value });
+    this.setState({ [type]: { ...this.state[type], value } }, () => {
+      this.verify(value, type);
+    });
+  }
+
+  verify = (value, type)  => {
+    validation(value, this.state[type]['rules'], result => {
+      const { isPass, msg } = result;
+      this.setState({ [type]: {...this.state[type], msg, status: isPass ? 'pass' : 'error' }});
+    });
   }
 
   render() {
+    const { name, phone, code, email, company, job, industry, city, intro} = this.state;
+
     return (
       <div className={`apply-form apply-form--${this.props.type}`}>
         <div className="apply-form__title text-pingfang">
@@ -34,8 +53,9 @@ class ApplyForm extends React.Component {
             <div className="apply-form__right">
               <Input
                 onChange={value => this.valueChange(value, 'name')}
-                value={this.state.name}
-                rules={['required']}
+                value={name.value}
+                status={name.status}
+                msg={name.msg}
               />
             </div>
           </div>
@@ -47,12 +67,14 @@ class ApplyForm extends React.Component {
               <Input
                 placeholder="请输入你的手机号码"
                 onChange={value => this.valueChange(value, 'phone')}
-                value={this.state.phone}
+                value={phone.value}
+                status={phone.status}
+                msg={phone.msg}
               />
               <SendCodeBtn
                 axUrl="/apply"
                 axData={{
-                  number: this.state.phone
+                  number: phone
                 }}
               />
             </div>
@@ -65,8 +87,9 @@ class ApplyForm extends React.Component {
               <Input
                 placeholder="请输入注册手机收到的验证码"
                 onChange={value => this.valueChange(value, 'code')}
-                value={this.state.code}
-                rules={['required']}
+                value={code.value}
+                status={code.status}
+                msg={code.msg}
               />
             </div>
           </div>
@@ -78,7 +101,9 @@ class ApplyForm extends React.Component {
               <Input
                 placeholder="电子邮箱"
                 onChange={value => this.valueChange(value, 'email')}
-                value={this.state.email}
+                value={email.value}
+                status={email.status}
+                msg={email.msg}
                 rules={['required', { type: 'email', msg: '请输入正确格式的邮箱地址！'}]}
               />
             </div>
@@ -91,8 +116,9 @@ class ApplyForm extends React.Component {
               <Input
                 placeholder="公司名称"
                 onChange={value => this.valueChange(value, 'company')}
-                value={this.state.company}
-                rules={['required']}
+                value={company.value}
+                status={company.status}
+                msg={company.msg}
               />
             </div>
           </div>
@@ -103,8 +129,9 @@ class ApplyForm extends React.Component {
             <div className="apply-form__right">
               <Input
                 onChange={value => this.valueChange(value, 'job')}
-                value={this.state.job}
-                rules={['required']}
+                value={job.value}
+                status={job.status}
+                msg={job.msg}
               />
             </div>
           </div>
@@ -115,8 +142,9 @@ class ApplyForm extends React.Component {
             <div className="apply-form__right">
               <Input
                 onChange={value => this.valueChange(value, 'industry')}
-                value={this.state.industry}
-                rules={['required']}
+                value={industry.value}
+                status={industry.status}
+                msg={industry.msg}
               />
             </div>
           </div>
@@ -126,7 +154,13 @@ class ApplyForm extends React.Component {
             </div>
             <div className="apply-form__right">
               <SelectCity onChange={value => this.valueChange(value, 'city')}>
-                <input value={this.state.city} />
+                <div>
+                  <Input
+                    value={city.value}
+                    status={city.status}
+                    msg={city.msg}
+                  />
+                </div>
               </SelectCity>
             </div>
           </div>
@@ -139,15 +173,20 @@ class ApplyForm extends React.Component {
                 placeholder="200-1000字"
                 multiline
                 onChange={value => this.valueChange(value, 'intro')}
-                value={this.state.intro}
-                rules={['required']}
+                value={intro.value}
+                status={intro.status}
+                msg={intro.msg}
               />
             </div>
           </div>
         </div>
-        <div className="apply-form__submit text-pingfang">
+        <a
+          href="javascript:;"
+          className="apply-form__submit text-pingfang"
+          onClick={this.onSubmit}
+        >
           提交
-        </div>
+        </a>
       </div>
     )
   }

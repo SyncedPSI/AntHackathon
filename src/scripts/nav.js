@@ -24,6 +24,8 @@ const navState = () => {
 
     if (oldIndex !== activeIndex) {
       const $activeCategory = $category.eq(activeIndex);
+      // const id = $item.eq(activeIndex).attr('id');
+      // document.location.hash = id;
       $category.removeClass('active');
       $activeCategory.addClass('active');
     }

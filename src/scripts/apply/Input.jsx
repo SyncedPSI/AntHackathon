@@ -8,29 +8,19 @@ class Input extends React.Component {
     disabled: false,
     multiline: false,
     className: '',
+    status: 'default',
+    msg: '',
+    rules: '',
     onChange: () => {}
   }
 
-  state = {
-    status: 'default',
-    msg: ''
-  }
-
   changeHandle = e => {
-    const { rules, onChange } = this.props;
     const new_value = e.target.value;
-    onChange(new_value);
-
-    if (typeof rules === 'undefined') return;
-    validation(new_value, rules, result => {
-      const { isPass, msg } = result;
-      this.setState({ msg, status: isPass ? 'pass' : 'error' });
-    });
+    this.props.onChange(new_value);
   }
 
   render() {
-    const { value, className, disabled, multiline, name, placeholder } = this.props;
-    const { status, msg } = this.state;
+    const { value, className, disabled, multiline, name, placeholder, status, msg } = this.props;
 
     const inputElementProps = {
       name,
@@ -61,12 +51,10 @@ Input.propTypes = {
     PropTypes.object,
     PropTypes.string
   ]),
-  rules: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.string
-  ])),
   multiline: PropTypes.bool,
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  status: PropTypes.string,
+  msg: PropTypes.string
 };
 
 export default Input;
