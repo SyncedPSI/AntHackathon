@@ -10,10 +10,17 @@ const webpack = require('webpack-stream');
 const connect = require('gulp-connect');
 const pug = require('gulp-pug');
 const fontmin = require( 'gulp-fontmin');
+const zip = require('gulp-zip');
 
 gulp.task('scripts', () => {
   gulp.src('./src/scripts/**/*')
     .pipe(webpack(require('./webpack.config.js')))
+    .pipe(gulp.dest('./dist/scripts'))
+});
+
+gulp.task('scripts:build', () => {
+  gulp.src('./src/scripts/**/*')
+    .pipe(webpack(require('./webpack.config.build.js')))
     .pipe(gulp.dest('./dist/scripts'))
 });
 
@@ -76,6 +83,11 @@ gulp.task('watch', () => {
   gulp.watch('./src/**/*.pug', ['html']);
 });
 
+gulp.task('zip', () => {
+  gulp.src('./dist/*')
+		.pipe(zip('dist.zip'))
+		.pipe(gulp.dest('./'))
+});
 
 gulp.task('default', ['connect', 'html', 'styles', 'images', 'font', 'scripts', 'watch']);
-gulp.task('build', ['styles', 'images', 'scripts']);
+gulp.task('build', ['scripts:build', 'zip']);

@@ -21,6 +21,10 @@ const config = {
         loader: 'url-loader?limit=25000'
       },
       {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
         test: /\.css$/,
         loader: 'style-loader!css-loader!autoprefixer-loader',
         include: /node_modules/

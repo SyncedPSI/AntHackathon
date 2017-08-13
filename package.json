@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "gulp",
+    "build": "gulp build",
     "modernizr": "modernizr -c ./src/modernizr-config.json -d ./dist/vendor/scripts"
   },
   "author": "",
@@ -35,10 +36,12 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^3.0.0",
+    "gulp-zip": "^4.0.0",
     "json-loader": "^0.5.7",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.5.3",
+    "webpack-merge": "^4.1.0",
     "webpack-stream": "^4.0.0"
   },
   "dependencies": {
