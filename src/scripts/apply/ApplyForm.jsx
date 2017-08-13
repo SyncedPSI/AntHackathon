@@ -72,10 +72,10 @@ class ApplyForm extends React.Component {
                 msg={phone.msg}
               />
               <SendCodeBtn
-                axUrl="/apply"
-                axData={{
-                  number: phone
-                }}
+                axUrl="/apply.html"
+                axData={
+                  {number: phone.value}
+                }
               />
             </div>
           </div>

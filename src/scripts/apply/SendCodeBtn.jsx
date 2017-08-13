@@ -21,6 +21,8 @@ class SendCodeBtn extends Component {
   }
 
   sendVerificationCode = () => {
+    if (this.state.isWaiting) return;
+
     $.ajax({
       url: this.props.axUrl,
       method: 'POST',
@@ -50,7 +52,6 @@ class SendCodeBtn extends Component {
       <a
         className={`send-code-btn ${this.props.className}`}
         href="javascript:;"
-        disabled={this.state.isWaiting}
         onClick={this.sendVerificationCode}
       >
         {this.state.label}
