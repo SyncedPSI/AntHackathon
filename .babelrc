@@ -5,5 +5,10 @@
     ],
     "react",
     "stage-0"
+  ],
+  "plugins": [
+    ["transform-object-rest-spread", { "useBuiltIns": true }],
+    ["transform-decorators-legacy"],
+    ["transform-class-properties"]
   ]
 }

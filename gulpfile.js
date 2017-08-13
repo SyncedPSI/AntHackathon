@@ -60,10 +60,11 @@ gulp.task('html', () => {
 gulp.task('font', () => {
   gulp.src('./src/font/*.ttf')
     .pipe(fontmin({
-        text: '0123456789 ABCDEFGHIGKLMNOPQRSTUVWXYZ abcdefghigklmnopqrstuvwxyz\
+      text: '0123456789 ABCDEFGHIGKLMNOPQRSTUVWXYZ abcdefghigklmnopqrstuvwxyz\
         蚂蚁开发者大赛 \
         支付宝小程序开发者大赛\
-        《《《 报名结束入口将关闭 》》》'
+        《《《 报名结束入口将关闭 》》》\
+        编程赛创意赛报名提交'
     }))
     .pipe(gulp.dest('./dist/font'))
 });

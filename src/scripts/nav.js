@@ -2,7 +2,6 @@ import $ from 'jquery';
 import scrollTo from 'jquery-scroll';
 
 const navState = () => {
-
   const $document = $(document);
   const $nav = $('.nav');
 
@@ -10,6 +9,7 @@ const navState = () => {
   const $category = $nav.find('a');
 
   let activeIndex = 0;
+  $category.eq(0).addClass('active');
 
   $document.on('scroll', () => {
     const position = $document.scrollTop();

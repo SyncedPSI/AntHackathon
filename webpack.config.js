@@ -22,7 +22,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css!autoprefixer',
+        loader: 'style-loader!css-loader!autoprefixer-loader',
         include: /node_modules/
       }
     ]
