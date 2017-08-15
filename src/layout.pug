@@ -7,6 +7,8 @@ html(lang="zh-CN")
     meta(name="renderer" content="webkit")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(content='initial-scale=1.0,maximum-scale=1.0,width=device-width,user-scalable=no' name='viewport')
+    script(type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js")
+    script(type="text/javascript" src="https://cdn.bootcss.com/babel-polyfill/6.22.0/polyfill.min.js")
     link(rel="stylesheet" href="./styles/app.min.css")
       
   body(id=action class=action)
@@ -15,6 +17,7 @@ html(lang="zh-CN")
     block content
     include ./views/shared/toolbar.pug
     include ./views/shared/footer.pug
-    script(type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js")
     // script(type="text/javascript" src="./vendor/scripts/modernizr.js")
+
     script(type="text/javascript" src="./scripts/app.js")
+    

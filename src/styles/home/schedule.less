@@ -5,5 +5,21 @@
     img {
       width: 100%;
     }
+
+    &.mobile {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: @breakpoint-medium) {
+  .schedule {
+    &-content {
+      display: none;
+
+      &.mobile {
+        display: block;
+      }
+    }
   }
 }

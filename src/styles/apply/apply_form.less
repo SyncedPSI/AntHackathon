@@ -28,6 +28,7 @@
 
   &__filed {
     display: flex;
+    justify-content: center;
     position: relative@hack;
 
     &:not(:last-child) {
@@ -66,6 +67,23 @@
     font-weight: bold;
     border-radius: 5px;
   }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+}
+
+.rc-cascader-menu {
+  vertical-align: top;
 }
 
 .apply-form--program {
@@ -150,6 +168,15 @@
 
     &__filed {
       flex-direction: column;
+    }
+
+    &__right--phone {
+      display: flex;
+      flex-direction: column;
+
+      .apply-input {
+        margin-bottom: 4px;
+      }
     }
 
     &__left {

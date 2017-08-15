@@ -20,16 +20,18 @@ mixin rules-desc(isApply)
         if !isApply
           p.rules-desc__title 中国赛区（杭州）
           .rules-desc__image
-            image(src="./images/rules-cn.png")
+            img(src="./images/rules-cn.png")
         .rules-desc__rules
-          image(src="./images/prize-cn.png")
+          img(src="./images/prize-cn.png")
 
       .rules-desc__inline
         if !isApply
           p.rules-desc__title 美国赛区（硅谷）
           .rules-desc__image
-            image(src="./images/rules-en.png")
+            img(src="./images/rules-en.png")
         .rules-desc__rules
-          image(src="./images/prize-en.png")
+          img(src="./images/prize-en.png")
     .rules-desc__prize
-      image(src="./images/prize-shortlisted.png")
+      img(src="./images/prize-shortlisted.png")
+    .rules-desc__prize.mobile
+      img(src="./images/prize-shortlisted-mobile.png")

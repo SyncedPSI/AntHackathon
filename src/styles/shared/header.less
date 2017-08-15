@@ -87,7 +87,7 @@
     position: relative;
     font-size: 1.6rem;
     display: inline-block@hack;
-    line-height: @header-h;
+    line-height: @header-h@hack;
 
     &::after {
       content: '';
@@ -97,7 +97,8 @@
       left: 50%;
       transform: translateX(-50%);
       left: 0@hack;
-      bottom: 0;
+      bottom: -10px;
+      bottom: 0@hack;
       border-bottom: 2px solid transparent;
       transition: all 0.3s;
     }

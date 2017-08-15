@@ -67,6 +67,10 @@
 
   &__prize {
     margin: 2rem 0 5rem 0;
+
+    &.mobile {
+      display: none;
+    }
   }
 }
 
@@ -95,8 +99,17 @@
     &__content {
       flex-wrap: wrap;
     }
+    
     &__inline {
       width: 100%;
+    }
+
+    &__prize {
+      display: none;
+
+      &.mobile {
+        display: block;
+      }
     }
   }
 }
