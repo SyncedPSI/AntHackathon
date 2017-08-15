@@ -7,6 +7,8 @@ import ModalLayer from 'modal-layer';
 import ApplyForm from './apply/ApplyForm';
 
 const apply = () => {
+  if (isMobileUA()) return;
+
   render(
     <ApplyForm type="program" />,
     document.getElementById('js-apply-program-modal')
@@ -17,8 +19,6 @@ const apply = () => {
     document.getElementById('js-apply-creative-modal')
   );
 
-
-  if (isMobileUA()) return;
   const $programBtn = $('#js-apply-program-btn');
   const programModal = new ModalLayer('#js-apply-program-modal');
 
