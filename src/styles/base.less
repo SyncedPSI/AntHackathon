@@ -5,6 +5,7 @@
 @blue: #00a0e9;
 @color-cn: #4B94CC;
 @color-en: #d22f7d;
+@hack: ~"\0";
 
 @header-h: 70px;
 
@@ -72,8 +73,8 @@ textarea {
 .ant-logo(@height) {
   height: @height;
   width: @height * 228 / 111;
-  background-size: cover;
   background-image: url('@{images}/ant-white-logo.png');
+  background-size: auto 100%;
 }
 
 .wrapper {

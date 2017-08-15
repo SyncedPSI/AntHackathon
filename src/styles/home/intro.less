@@ -4,6 +4,7 @@
     padding: 20px 0;
     line-height: 1.5;
     justify-content: space-between;
+    overflow: hidden@hack;
   }
 
   img {
@@ -12,6 +13,12 @@
 
   .platform-intro {
     width: 30%;
+    float: left@hack;
+    margin-right: 5%@hack;
+
+    &:nth-child(3) {
+      margin-right: 0@hack;
+    }
   }
 }
 

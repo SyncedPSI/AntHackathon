@@ -3,6 +3,22 @@
   background-size: 190px, 300px;
   background-position: -66px 3px ,top 1200px right -90px;
   background-repeat: no-repeat;
+
+  .rules-desc {
+    &__content {
+      display: table@hack;
+    }
+
+    &__inline {
+      display: table-cell@hack;
+      width: 40%@hack;
+
+      &:nth-child(1) {
+        width: 60%@hack;
+        padding-right: 10%@hack;
+      }
+    }
+  }
 }
 
 

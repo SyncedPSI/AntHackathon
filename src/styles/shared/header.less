@@ -11,10 +11,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow:hidden@hack;
   }
 
   &__logo {
-    .ant-logo(50px)
+    .ant-logo(50px);
+    float: left@hack;
+    margin: 10px 0@hack;
+    padding-left: 200px@hack;
+    background-repeat: no-repeat;
   }
 
   &__right {
@@ -22,6 +27,14 @@
     align-items: center;
     justify-content: space-between;
     width: 80%;
+    display: table@hack;
+  }
+
+  &__other {
+    float: right@hack;
+    margin-top: -@header-h@hack;
+    height: @header-h@hack;
+    line-height: @header-h@hack;
   }
 
   &__local {
@@ -73,6 +86,8 @@
   &__item {
     position: relative;
     font-size: 1.6rem;
+    display: inline-block@hack;
+    line-height: @header-h;
 
     &::after {
       content: '';
@@ -81,7 +96,8 @@
       height: 0;
       left: 50%;
       transform: translateX(-50%);
-      bottom: -10px;
+      left: 0@hack;
+      bottom: 0;
       border-bottom: 2px solid transparent;
       transition: all 0.3s;
     }

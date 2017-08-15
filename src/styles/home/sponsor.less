@@ -1,12 +1,28 @@
 .sponsor {
   background: url('@{images}/element-03.png') no-repeat;
-  background-size: 90px, 200px;
-  background-position: 0px 558px;
+  background-size: 130px, 200px;
+  background-position: 0px 400px;
   padding-bottom: 5rem;
 
   &__left,
   &__right {
     width: 45%;
+  }
+
+  .sponsor__content {
+    display: table@hack;
+
+    .sponsor__left {
+      display: table-cell@hack;
+      vertical-align: middle@hack;
+      width: 60%@hack;
+      padding-right: 10%@hack;
+    }
+
+    .sponsor__right {
+      display: table-cell@hack;
+      width: 40%@hack;
+    }
   }
 
   &__owner {
@@ -15,6 +31,11 @@
     width: auto;
     justify-content: baseline;
     align-items: flex-end;
+    display: table@hack;
+
+    .sponsor__name, .sponsor__logo {
+      display: table-cell@hack;
+    }
   }
 
   &__content {
@@ -44,7 +65,7 @@
 @media screen and (max-width: @breakpoint-medium) {
   .sponsor {
     background: none;
-    
+
     &__content {
       flex-direction: column;
     }
