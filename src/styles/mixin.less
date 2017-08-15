@@ -39,16 +39,21 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    display: table@hack;
   }
 
   &__inline {
     margin-bottom: 2rem;
     width: 45%;
     color: @color-cn;
+    display: table-cell@hack;
 
     &:nth-child(2n) {
       margin-right: 0;
       color: @color-en;
+      width: 55%@hack;
+      padding-left: 10%@hack;
+      vertical-align: top@hack;
     }
   }
 
