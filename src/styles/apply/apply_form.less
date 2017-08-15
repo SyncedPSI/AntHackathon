@@ -28,6 +28,7 @@
 
   &__filed {
     display: flex;
+    position: relative@hack;
 
     &:not(:last-child) {
       margin-bottom: 15px;
@@ -38,14 +39,22 @@
     width: 150px;
     padding-top: 8px;
     text-align: right;
+    position: absolute@hack;
   }
 
   &__right {
     width: 350px;
+    width: 500px@hack;
+    padding-left: 150px@hack;
   }
 
   &__right--phone {
     display: flex;
+    position: relative@hack;
+
+    .apply-input {
+      padding-right: 100px@hack;
+    }
   }
 
   &__submit {
@@ -120,6 +129,10 @@
   width: 100px;
   flex-shrink: 0;
   background-color: @pink;
+  position: absolute@hack;
+  right: 0@hack;
+  top: 0@hack;
+  line-height: 36px@hack;
 }
 
 @media screen and (max-width: @breakpoint-medium) {
