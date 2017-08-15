@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import React from 'react';
 import { render } from 'react-dom';
+import { isMobileUA } from 'mdetect';
 
 import ModalLayer from 'modal-layer';
 import ApplyForm from './apply/ApplyForm';
@@ -17,17 +18,20 @@ const apply = () => {
   );
 
 
+  if (isMobileUA()) return;
   const $programBtn = $('#js-apply-program-btn');
   const programModal = new ModalLayer('#js-apply-program-modal');
 
-  $programBtn.on('click', () => {
+  $programBtn.on('click', e => {
+    e.preventDefault();
     programModal.open();
   });
 
   const $creativeBtn = $('#js-apply-creative-btn');
   const creativeModal = new ModalLayer('#js-apply-creative-modal');
 
-  $creativeBtn.on('click', () => {
+  $creativeBtn.on('click', e => {
+    e.preventDefault();
     creativeModal.open();
   });
 }

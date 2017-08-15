@@ -1,9 +1,9 @@
-@zone-w: 1500px;
-
 .intro {
   &__content {
+    display: flex;
     padding: 20px 0;
     line-height: 1.5;
+    justify-content: space-between;
   }
 
   img {
@@ -11,6 +11,23 @@
   }
 
   .platform-intro {
-    margin: 3rem 0;
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: @breakpoint-medium) {
+  .intro {
+    &__content {
+      font-size: 1.8rem;
+      flex-direction: column;
+    }
+
+    .platform-intro {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
   }
 }

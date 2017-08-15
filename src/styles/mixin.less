@@ -7,6 +7,8 @@
 }
 
 .solgan {
+  margin-bottom: 40px;
+
   &__topic {
     font-size: 6rem;
     margin-bottom: 20px;
@@ -60,5 +62,36 @@
 
   &__prize {
     margin: 2rem 0 5rem 0;
+  }
+}
+
+
+@media screen and (max-width: @breakpoint-medium) {
+  .module-title {
+    font-size: 2.5rem;
+    padding-left: 30px;
+  }
+
+  .solgan {
+    &__topic {
+      font-size: 4.5rem;
+
+      .solgan__title-en {
+        font-size: 1.9rem;
+      }
+    }
+
+    &__topic-second {
+      font-size: 1.8rem;
+    }
+  }
+
+  .rules-desc {
+    &__content {
+      flex-wrap: wrap;
+    }
+    &__inline {
+      width: 100%;
+    }
   }
 }

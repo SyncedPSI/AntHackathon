@@ -121,3 +121,31 @@
   flex-shrink: 0;
   background-color: @pink;
 }
+
+
+@media screen and (max-width: @breakpoint-medium) {
+  .apply-form {
+    padding: 50px 20px;
+    width: 100%;
+    max-height: none;
+    height: auto;
+
+    &__content {
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__filed {
+      flex-direction: column;
+    }
+
+    &__left {
+      text-align: left;
+    }
+
+    &__right {
+      width: auto;
+    }
+  }
+}

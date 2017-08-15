@@ -2,12 +2,12 @@
   color: #fff;
   position: fixed;
   width: 100%;
-  height: @header-h;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   background-color: #000;
   z-index: 2;
 
   &__container {
+    height: @header-h;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,6 +15,13 @@
 
   &__logo {
     .ant-logo(50px)
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
   }
 
   &__local {
@@ -31,6 +38,7 @@
   }
 
   &__open {
+    text-align: center;
     padding: 4px 10px;
     border: 1px solid #fff;
 
@@ -38,6 +46,21 @@
       color: #fff;
       background-color: @pink;
       border-color: @pink;
+    }
+  }
+
+  .hamburger {
+    display: none;
+    padding: 0;
+    transform: scale(0.6);
+    transform-origin: center right;
+  }
+
+  .hamburger-inner {
+    &,
+    &::before,
+    &::after {
+      background-color: #fff;
     }
   }
 }
@@ -75,5 +98,75 @@
 
   &__item:not(:last-child) {
     margin-right: 35px;
+  }
+}
+
+
+@media screen and (max-width: @breakpoint-medium) {
+  .header {
+    background: none;
+
+    &__container {
+      height: 50px;
+    }
+
+    &__logo {
+      position: relative;
+      z-index: 40;
+      .ant-logo(38px)
+    }
+
+    &__right {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      top: 50px;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #000;
+      z-index: 20;
+      background-image: url('@{images}/bg.jpg');
+      background-size: 100%;
+      background-position: left;
+      padding-bottom: 60px;
+      transform: translateY(-100%);
+      transition: all 0.3s;
+
+      .nav {
+        height: auto;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        &__item {
+          font-size: 2rem;
+          margin-bottom: 30px;
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__other {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__local {
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+
+    .hamburger {
+      z-index: 40;
+      display: inline-block;
+    }
+
+
+    &.is-active {
+      .header__right {
+        top: 0;
+        transform: translateY(0);
+      }
+    }
   }
 }

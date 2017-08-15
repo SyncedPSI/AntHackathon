@@ -46,7 +46,9 @@
   },
   "dependencies": {
     "countdown": "^2.6.0",
+    "hamburgers": "^0.9.1",
     "jquery-scroll": "^1.1.1",
+    "mdetect": "^1.2.3",
     "modal-layer": "^1.1.1",
     "normalize.css": "^7.0.0",
     "prop-types": "^15.5.10",

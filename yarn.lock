@@ -3192,6 +3192,10 @@ gutil@^1.6.4:
   dependencies:
     sliced "*"
 
+hamburgers@^0.9.1:
+  version "0.9.1"
+  resolved "http://registry.npm.taobao.org/hamburgers/download/hamburgers-0.9.1.tgz#49bc3bca667a693a8458388c9ef265ae611348d5"
+
 har-schema@^1.0.5:
   version "1.0.5"
   resolved "http://registry.npm.taobao.org/har-schema/download/har-schema-1.0.5.tgz#d263135f43307c02c602afc8fe95970c0151369e"
@@ -4176,6 +4180,10 @@ map-stream@~0.1.0:
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "http://registry.npm.taobao.org/math-expression-evaluator/download/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
+
+mdetect@^1.2.3:
+  version "1.2.3"
+  resolved "http://registry.npm.taobao.org/mdetect/download/mdetect-1.2.3.tgz#446737f35832877fd0453e51ab6bc25d168be3de"
 
 media-typer@0.3.0:
   version "0.3.0"

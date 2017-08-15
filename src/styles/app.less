@@ -1,5 +1,6 @@
 @import '../../node_modules/normalize.css/normalize.css';
 @import '../../node_modules/modal-layer/dist/style.css';
+@import '../../node_modules/hamburgers/dist/hamburgers.min.css';
 
 @import './textfont.less';
 @import './base.less';
@@ -29,4 +30,12 @@
   @import './apply/banner.less';
   @import './apply/apply_entry.less';
   @import './apply/apply_form.less';
+}
+
+
+@media screen and (max-width: @breakpoint-medium) {
+  .page-home {
+    background-size: 100%;
+    background-repeat: repeat-y;
+  }
 }
