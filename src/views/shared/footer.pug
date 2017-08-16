@@ -1,16 +1,20 @@
 footer.footer.t-center
   .container
-    .footer__qrcodes
-      .footer__qrcode
-        .footer__qrcode-img
-          img(src="./images/dingding-we.png")
-        .footer__qrcode-hint
-          | !{$t.toolbar.dingding}
-      .footer__qrcode
-        .footer__qrcode-img
-          img(src="./images/wechat-we.png")
-        .footer__qrcode-hint
-          | !{$t.toolbar.wechat}
+    if $t.lang !== "en"
+      .footer__qrcodes
+        .footer__qrcode
+          .footer__qrcode-img
+            img(src="./images/dingding-we.png")
+          .footer__qrcode-hint
+            | !{$t.toolbar.dingding}
+        .footer__qrcode
+          .footer__qrcode-img
+            img(src="./images/wechat-we.png")
+          .footer__qrcode-hint
+            | !{$t.toolbar.wechat}
+    else
+      .footer__line
+        | Contact Email：chain.zhang@jiqizhixin.com
     .footer__line
       a.footer__link(href="javascript:;") #{$t.footer.about}
       span |

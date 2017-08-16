@@ -5,6 +5,7 @@ import SelectCity from './SelectCity';
 import { translate } from 'react-i18next';
 
 import { validation } from 'value-validate';
+import { isEn } from '../tool';
 
 @translate()
 class ApplyForm extends React.Component {
@@ -151,29 +152,50 @@ class ApplyForm extends React.Component {
               />
             </div>
           </div>
-          <div className="apply-form__filed">
-            <div className="apply-form__left">
-              {t('form.p8')}
-            </div>
-            <div className="apply-form__right">
-              <SelectCity onChange={value => this.valueChange(value, 'city')}>
-                <div>
+          
+
+          {
+            isEn() ?
+              <div className="apply-form__filed">
+                <div className="apply-form__left">
+                  {t('form.p8')}
+                </div>
+                <div className="apply-form__right">
                   <Input
+                    onChange={value => this.valueChange(value, 'city')}
                     value={city.value}
                     status={city.status}
                     msg={city.msg}
                   />
                 </div>
-              </SelectCity>
+              </div>
+             :
+            <div className="apply-form__filed">
+              <div className="apply-form__left">
+                {t('form.p8')}
+              </div>
+              <div className="apply-form__right">
+                <SelectCity onChange={value => this.valueChange(value, 'city')}>
+                  <div>
+                    <Input
+                      value={city.value}
+                      status={city.status}
+                      msg={city.msg}
+                    />
+                  </div>
+                </SelectCity>
+              </div>
             </div>
-          </div>
+          }
+
+
           <div className="apply-form__filed">
             <div className="apply-form__left">
               {`${this.props.type === 'program' ? t('form.p16') : t('form.p9')}`}
             </div>
             <div className="apply-form__right">
               <Input
-                placeholder="200-1000字"
+                placeholder={t('form.p14')}
                 multiline
                 onChange={value => this.valueChange(value, 'intro')}
                 value={intro.value}
