@@ -33,6 +33,7 @@
     "gulp-minify-css": "^1.2.4",
     "gulp-notify": "^3.0.0",
     "gulp-pug": "^3.3.0",
+    "gulp-pug-i18n": "^0.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^3.0.0",
@@ -47,6 +48,7 @@
   "dependencies": {
     "countdown": "^2.6.0",
     "hamburgers": "^0.9.1",
+    "i18next": "^8.4.3",
     "jquery-scroll": "^1.1.1",
     "mdetect": "^1.2.3",
     "modal-layer": "^1.1.1",
@@ -55,6 +57,7 @@
     "rc-cascader": "^0.11.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-i18next": "^4.8.0",
     "value-validate": "^1.0.1"
   }
 }

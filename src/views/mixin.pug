@@ -6,11 +6,11 @@ mixin solgan
   .solgan
     .solgan__topic.text-pingfang
       .solgan__date 2017
-      .solgan__title 蚂蚁开发者大赛
-      .solgan__title-en Ant Technology Developer Challenge
+      .solgan__title !{$t.mixin.solgan.t1}
+      .solgan__title-en #{$t.mixin.solgan.t2}
     .solgan__topic-second.text-pingfang
-      .solgan__title 支付宝小程序开发者大赛 
-      .solgan__title-en Alipay Mini-program Hackathon
+      .solgan__title #{$t.mixin.solgan.t3}
+      .solgan__title-en #{$t.mixin.solgan.t4}
 
 
 mixin rules-desc(isApply)
@@ -18,20 +18,30 @@ mixin rules-desc(isApply)
     .rules-desc__content
       .rules-desc__inline
         if !isApply
-          p.rules-desc__title 中国赛区（杭州）
+          p.rules-desc__title #{$t.mixin.rulesDesc.t1}
           .rules-desc__image
             img(src="./images/rules-cn.png")
         .rules-desc__rules
-          img(src="./images/prize-cn.png")
+          if $t.lang !== "en"
+            img(src="./images/prize-cn.png")
+          else 
+            img(src="./images/prize-cn-en.png")
 
       .rules-desc__inline
         if !isApply
-          p.rules-desc__title 美国赛区（硅谷）
+          p.rules-desc__title #{$t.mixin.rulesDesc.t2}
           .rules-desc__image
             img(src="./images/rules-en.png")
         .rules-desc__rules
-          img(src="./images/prize-en.png")
+          if $t.lang !== "en"
+            img(src="./images/prize-en.png")
+          else
+            img(src="./images/prize-en-en.png")
     .rules-desc__prize
-      img(src="./images/prize-shortlisted.png")
+      if $t.lang !== "en"
+        img(src="./images/prize-shortlisted.png")
+      else
+        img(src="./images/prize-shortlisted-en.png")
+
     .rules-desc__prize.mobile
-      img(src="./images/prize-shortlisted-mobile.png")
+      img(src="./images/prize-shortlisted-mobile-en.png")

@@ -1,11 +1,11 @@
 section.apply-entry
   .container.apply-entry__container.t-center
     .apply-entry__item
-      a.apply-entry__program.text-pingfang#js-apply-program-btn(href="/apply-program.html")
-        | 编程赛报名
+      a.apply-entry__program.text-pingfang#js-apply-program-btn(href=applyProgramUrl)
+        | #{$t.apply.program}
     .apply-entry__item
-      a.apply-entry__creative.text-pingfang#js-apply-creative-btn(href="/apply-creative.html")
-        | 创意赛报名
+      a.apply-entry__creative.text-pingfang#js-apply-creative-btn(href=applyCreativeUrl)
+        | #{$t.apply.creative}
 
   .container
     +rules-desc(true)

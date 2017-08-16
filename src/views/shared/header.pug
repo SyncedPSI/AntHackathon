@@ -3,16 +3,22 @@ header.header#site-header
     a.header__logo(href="javascript:;")
     .header__right
       nav.header__nav.nav
-        a.nav__item(href="/#banner", data-index="0") 首页
-        a.nav__item(href="/#intro", data-index="1") 大赛介绍
-        a.nav__item(href="/#schedule", data-index="2") 大赛日程
-        a.nav__item(href="/#rules", data-index="3") 参赛规则及奖项设置
-        a.nav__item(href="/#sponsor", data-index="4") 大赛组织者
+        a.nav__item(href=`${homeUrl}#banner`, data-index="0")=$t.header.nav.n1
+        a.nav__item(href=`${homeUrl}#intro`, data-index="1")=$t.header.nav.n2
+        a.nav__item(href=`${homeUrl}#schedule`, data-index="2")=$t.header.nav.n3
+        a.nav__item(href=`${homeUrl}#rules`, data-index="3")=$t.header.nav.n4
+        a.nav__item(href=`${homeUrl}#sponsor`, data-index="4")=$t.header.nav.n5
       .header__other
         .header__local
-          a.active(href="javascript:;") 中文
+          if $t.lang !== "en"
+            a.active(href="javascript:;")=$t.header.zh
+          else
+            a(href="/index.html")=$t.header.zh
           span /
-          a(href="javascript:;") English
+          if $t.lang !== "en"
+            a(href="/index.en.html") English
+          else 
+            a.active(href="javascript:;") English
         //
           a.header__open(href="javascript:;")
             | 蚂蚁开放日

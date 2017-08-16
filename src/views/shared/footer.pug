@@ -1,32 +1,24 @@
 footer.footer.t-center
   .container
+    .footer__qrcodes
+      .footer__qrcode
+        .footer__qrcode-img
+          img(src="./images/dingding-we.png")
+        .footer__qrcode-hint
+          | !{$t.toolbar.dingding}
+      .footer__qrcode
+        .footer__qrcode-img
+          img(src="./images/wechat-we.png")
+        .footer__qrcode-hint
+          | !{$t.toolbar.wechat}
     .footer__line
-      | 客服热线：4006000000    欢迎批评指正
-    .footer__line
-      a.footer__link(href="javascript:;") 常见问题解答
-      a.footer__link(href="javascript:;") 互联网违法和不良信息举报
-      a.footer__link(href="javascript:;") 意见反馈留言板
-      a.footer__link(href="javascript:;") 投稿信箱
-    .footer__line
-      a.footer__link(href="javascript:;") 蚂蚁金服简介
+      a.footer__link(href="javascript:;") #{$t.footer.about}
       span |
-      a.footer__link(href="javascript:;") About me
+      a.footer__link(href="javascript:;") #{$t.footer.contact}
       span |
-      a.footer__link(href="javascript:;") 广告服务
-      span |
-      a.footer__link(href="javascript:;") 联系我们
-      span |
-      a.footer__link(href="javascript:;") 招聘信息
-      span |
-      a.footer__link(href="javascript:;") 网站律师
-      span |
-      a.footer__link(href="javascript:;") 通行证注册
-      span |
-      a.footer__link(href="javascript:;") 产品答疑
+      a.footer__link(href="javascript:;") #{$t.footer.sign}
     .footer__line
       a.footer__link(href="javascript:;")
-        |《蚂蚁金服隐私权政策》
-      a.footer__link(href="javascript:;")
-        |《蚂蚁金服客户权益保障承诺书》
+        | #{$t.footer.privacy}
     .footer__line
-      | ICP证:浙B2-20100257  Copyright © 2017 蚂蚁金融服务集团
+      | #{$t.footer.copyright}

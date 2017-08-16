@@ -1,5 +1,16 @@
+if $t.lang !== "en"
+  - var applyUrl = 'apply.html'
+  - var homeUrl = 'index.html'
+  - var applyProgramUrl = 'apply-program.html'
+  - var applyCreativeUrl = 'apply-creative.html'
+else
+  - var applyUrl = 'apply.en.html'
+  - var homeUrl = 'index.en.html'
+  - var applyProgramUrl = 'apply-program.en.html'
+  - var applyCreativeUrl = 'apply-creative.en.html'
+
 doctype html
-html(lang="zh-CN")
+html(lang=$t.lang)
   block variables
   head
     title=title
@@ -10,7 +21,7 @@ html(lang="zh-CN")
     script(type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js")
     script(type="text/javascript" src="https://cdn.bootcss.com/babel-polyfill/6.22.0/polyfill.min.js")
     link(rel="stylesheet" href="./styles/app.min.css")
-      
+  
   body(id=action class=action)
     include ./views/mixin.pug
     include ./views/shared/header.pug

@@ -50,3 +50,9 @@ export const share = {
     share.openWindow(jump);
   }
 };
+
+
+export const isEn = () => {
+  const lang = $('html').attr('lang');
+  return lang === 'en';
+}

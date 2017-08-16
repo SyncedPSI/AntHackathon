@@ -8,9 +8,10 @@ const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
 const webpack = require('webpack-stream');
 const connect = require('gulp-connect');
-const pug = require('gulp-pug');
+// const pug = require('gulp-pug');
 const fontmin = require( 'gulp-fontmin');
 const zip = require('gulp-zip');
+const pug = require('gulp-pug-i18n');
 
 gulp.task('scripts', () => {
   gulp.src('./src/scripts/**/*')
@@ -56,13 +57,21 @@ gulp.task('images', () => {
 });
 
 // diff views
-gulp.task('html', () => {
-  gulp.src(['./src/index.pug', './src/apply.pug', './src/apply-creative.pug', './src/apply-program.pug'])
-    .pipe(pug())
+gulp.task('pugI18n', () => {
+  var options = {
+    i18n: {
+      locales: './src/locales/*',
+      namespace: '$t',
+      filename: '{{basename}}{.{{lang}}}{.{{region}}}.html',
+      default: 'zh'
+    },
+    pretty: true
+  };
+  return gulp.src(['./src/index.pug', './src/apply.pug', './src/apply-creative.pug', './src/apply-program.pug'])
+    .pipe(pug(options))
+    .on('error', notify.onError('Error: <%= error.message %>'))
     .pipe(gulp.dest('./dist'))
-    .pipe(connect.reload());
 });
-
 
 gulp.task('font', () => {
   gulp.src('./src/font/*.ttf')
@@ -80,7 +89,7 @@ gulp.task('font', () => {
 gulp.task('watch', () => {
   gulp.watch('./src/styles/**/*.less', ['styles']);
   gulp.watch('./src/images/**/*', ['images']);
-  gulp.watch('./src/**/*.pug', ['html']);
+  gulp.watch(['./src/**/*.pug', './src/locales/*'], ['pugI18n']);
 });
 
 gulp.task('zip', () => {
@@ -89,5 +98,5 @@ gulp.task('zip', () => {
 		.pipe(gulp.dest('./'))
 });
 
-gulp.task('default', ['connect', 'html', 'styles', 'images', 'font', 'scripts', 'watch']);
+gulp.task('default', ['connect', 'pugI18n', 'styles', 'images', 'font', 'scripts', 'watch']);
 gulp.task('build', ['scripts:build', 'zip']);

@@ -2,9 +2,11 @@ import React from 'react';
 import Input from './Input';
 import SendCodeBtn from './SendCodeBtn';
 import SelectCity from './SelectCity';
+import { translate } from 'react-i18next';
 
 import { validation } from 'value-validate';
 
+@translate()
 class ApplyForm extends React.Component {
   state = {
     name: { value: '', status: 'default', msg: '', rules: ['required'] },
@@ -38,17 +40,18 @@ class ApplyForm extends React.Component {
   }
 
   render() {
+    const { t } = this.props;
     const { name, phone, code, email, company, job, industry, city, intro} = this.state;
 
     return (
       <div className={`apply-form apply-form--${this.props.type}`}>
         <div className="apply-form__title text-pingfang">
-          {`${this.props.type === 'program' ? '编程' : '创意'}赛报名`}
+          {`${this.props.type === 'program' ? t('program') : t('creative')}`}
         </div>
         <div className="apply-form__content">
           <div className="apply-form__filed">
             <div className="apply-form__left">
-              姓名：
+              {t('form.p1')}
             </div>
             <div className="apply-form__right">
               <Input
@@ -61,11 +64,11 @@ class ApplyForm extends React.Component {
           </div>
           <div className="apply-form__filed">
             <div className="apply-form__left">
-              手机：
+              {t('form.p2')}
             </div>
             <div className="apply-form__right apply-form__right--phone">
               <Input
-                placeholder="请输入你的手机号码"
+                placeholder={t('form.p10')}
                 onChange={value => this.valueChange(value, 'phone')}
                 value={phone.value}
                 status={phone.status}
@@ -81,11 +84,11 @@ class ApplyForm extends React.Component {
           </div>
           <div className="apply-form__filed">
             <div className="apply-form__left">
-              验证：
+              {t('form.p3')}
             </div>
             <div className="apply-form__right">
               <Input
-                placeholder="请输入注册手机收到的验证码"
+                placeholder={t('form.p11')}
                 onChange={value => this.valueChange(value, 'code')}
                 value={code.value}
                 status={code.status}
@@ -95,11 +98,11 @@ class ApplyForm extends React.Component {
           </div>
           <div className="apply-form__filed">
             <div className="apply-form__left">
-              邮箱：
+              {t('form.p4')}
             </div>
             <div className="apply-form__right">
               <Input
-                placeholder="电子邮箱"
+                placeholder={t('form.p12')}
                 onChange={value => this.valueChange(value, 'email')}
                 value={email.value}
                 status={email.status}
@@ -110,11 +113,11 @@ class ApplyForm extends React.Component {
           </div>
           <div className="apply-form__filed">
             <div className="apply-form__left">
-              公司：
+              {t('form.p5')}
             </div>
             <div className="apply-form__right">
               <Input
-                placeholder="公司名称"
+                placeholder={t('form.p13')}
                 onChange={value => this.valueChange(value, 'company')}
                 value={company.value}
                 status={company.status}
@@ -124,7 +127,7 @@ class ApplyForm extends React.Component {
           </div>
           <div className="apply-form__filed">
             <div className="apply-form__left">
-              职位：
+              {t('form.p6')}
             </div>
             <div className="apply-form__right">
               <Input
@@ -137,7 +140,7 @@ class ApplyForm extends React.Component {
           </div>
           <div className="apply-form__filed">
             <div className="apply-form__left">
-              行业：
+              {t('form.p7')}
             </div>
             <div className="apply-form__right">
               <Input
@@ -150,7 +153,7 @@ class ApplyForm extends React.Component {
           </div>
           <div className="apply-form__filed">
             <div className="apply-form__left">
-              省市：
+              {t('form.p8')}
             </div>
             <div className="apply-form__right">
               <SelectCity onChange={value => this.valueChange(value, 'city')}>
@@ -166,7 +169,7 @@ class ApplyForm extends React.Component {
           </div>
           <div className="apply-form__filed">
             <div className="apply-form__left">
-              {`${this.props.type === 'program' ? '开发' : '创意'}方案简介：`}
+              {`${this.props.type === 'program' ? t('form.p16') : t('form.p9')}`}
             </div>
             <div className="apply-form__right">
               <Input
@@ -185,7 +188,7 @@ class ApplyForm extends React.Component {
           className="apply-form__submit text-pingfang"
           onClick={this.onSubmit}
         >
-          提交
+          {t('form.p15')}
         </a>
       </div>
     )

@@ -1,7 +1,13 @@
 section.category.schedule#schedule
   .container
-    +module-title('大赛日程')
+    +module-title($t.schedule.title)
     .schedule-content
-      img(src="./images/schedule.png")
+      if $t.lang !== "en"
+        img(src="./images/schedule.png")
+      else 
+        img(src="./images/schedule-en.png")
     .schedule-content.mobile
-      img(src="./images/schedule-mobile.png")
+      if $t.lang !== "en"
+        img(src="./images/schedule-mobile.png")
+      else
+        img(src="./images/schedule-mobile-en.png")

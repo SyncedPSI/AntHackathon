@@ -9,13 +9,9 @@ section.category.banner#banner
       span.mins-num.item(data-title="MINUTES") 00
       span :
       span.secs-num.item(data-title="SECONDS") 00
-    a.banner__apply(href="/apply.html" target="_blank")
-      | 报名参加
+    a.banner__apply(href=applyUrl  target="_blank")
+      | #{$t.home.banner.applyBtn}
     .banner__hint.t-pink
-      | &lt;&lt;&lt; 报名结束入口将关闭 &gt;&gt;&gt;
+      | &lt;&lt;&lt; #{$t.home.banner.applyHint} &gt;&gt;&gt;
     .banner__intro.t-pink
-      p /* 1492年，哥伦布第一次扬帆驶入大西洋，开启了大航海时代。
-      p 开发者，在互联网海洋中扮演着哥伦布这样探险家的角色。
-      p 科技，是我们改变世界的原力。
-      p 开发者往往是新鲜事物最早的登陆人，
-      p 提早为世界埋下未来的种子。*/ 
+      p !{$t.home.banner.intro}
