@@ -17,7 +17,8 @@ const navState = () => {
 
     $item.each((index, elem) => {
       const $elem = $(elem);
-      if (position >= $elem.offset().top - 120 && position <= $elem.offset().top - 120 + $elem.innerHeight()) {
+
+      if (position >= Math.floor($elem.offset().top - 120) && position <= Math.floor($elem.offset().top - 120) + Math.floor($elem.innerHeight())) {
         activeIndex = index;
       }
     });
