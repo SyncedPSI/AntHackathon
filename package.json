@@ -58,6 +58,6 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-i18next": "^4.8.0",
-    "value-validate": "^1.0.1"
+    "value-validate": "^1.1.2"
   }
 }

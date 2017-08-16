@@ -74,7 +74,7 @@ gulp.task('pugI18n', () => {
 });
 
 gulp.task('font', () => {
-  gulp.src('./src/font/*.ttf')
+  gulp.src('./src/font/PingFang Light.ttf')
     .pipe(fontmin({
       text: '0123456789 ABCDEFGHIGKLMNOPQRSTUVWXYZ abcdefghigklmnopqrstuvwxyz\
         蚂蚁开发者大赛 \
@@ -99,4 +99,4 @@ gulp.task('zip', () => {
 });
 
 gulp.task('default', ['connect', 'pugI18n', 'styles', 'images', 'font', 'scripts', 'watch']);
-gulp.task('build', ['scripts:build', 'zip']);
+gulp.task('build', ['pugI18n', 'styles', 'images', 'font', 'scripts:build', 'zip']);

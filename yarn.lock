@@ -1293,12 +1293,6 @@ builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "http://registry.npm.taobao.org/builtin-status-codes/download/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
 
-bundle-loader@^0.5.5:
-  version "0.5.5"
-  resolved "http://registry.npm.taobao.org/bundle-loader/download/bundle-loader-0.5.5.tgz#11fd7b08edf86a1d708efcb1eca62ca51f6c368a"
-  dependencies:
-    loader-utils "^1.0.2"
-
 bytes@2.1.0:
   version "2.1.0"
   resolved "http://registry.npm.taobao.org/bytes/download/bytes-2.1.0.tgz#ac93c410e2ffc9cc7cf4b464b38289067f5e47b4"
@@ -3332,10 +3326,6 @@ http-signature@~1.1.0:
 https-browserify@0.0.1:
   version "0.0.1"
   resolved "http://registry.npm.taobao.org/https-browserify/download/https-browserify-0.0.1.tgz#3f91365cabe60b77ed0ebba24b454e3e09d95a82"
-
-i18next-xhr-backend@^1.4.2:
-  version "1.4.2"
-  resolved "http://registry.npm.taobao.org/i18next-xhr-backend/download/i18next-xhr-backend-1.4.2.tgz#7aa766292c46ca83ff6477bb55074b363a646a62"
 
 i18next@^8.4.3:
   version "8.4.3"
@@ -6579,9 +6569,9 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
 
-value-validate@^1.0.1:
-  version "1.0.1"
-  resolved "http://registry.npm.taobao.org/value-validate/download/value-validate-1.0.1.tgz#c35847f0e892cdf2e7991b4178588a1d6db5a014"
+value-validate@^1.1.2:
+  version "1.1.2"
+  resolved "http://registry.npm.taobao.org/value-validate/download/value-validate-1.1.2.tgz#e418b6f7f1e371087f8d9dca416f0c0be1e62ef9"
   dependencies:
     lodash "^4.17.4"
 

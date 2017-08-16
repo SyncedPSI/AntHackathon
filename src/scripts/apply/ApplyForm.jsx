@@ -18,7 +18,7 @@ class ApplyForm extends React.Component {
     job: { value: '', status: 'default', msg: '', rules: ['required'] },
     industry: { value: '', status: 'default', msg: '', rules: ['required'] },
     city: { value: '', status: 'default', msg: '', rules: ['required'] },
-    intro: { value: '', status: 'default', msg: '', rules: ['required'] }
+    intro: { value: '', status: 'default', msg: '', rules: ['required', 'count-gts-200', 'count-lts-1000'] }
   }
 
   onSubmit = () => {
@@ -152,7 +152,7 @@ class ApplyForm extends React.Component {
               />
             </div>
           </div>
-          
+
 
           {
             isEn() ?

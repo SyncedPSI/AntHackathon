@@ -44,4 +44,7 @@ mixin rules-desc(isApply)
         img(src="./images/prize-shortlisted-en.png")
 
     .rules-desc__prize.mobile
-      img(src="./images/prize-shortlisted-mobile-en.png")
+      if $t.lang !== "en"
+        img(src="./images/prize-shortlisted-mobile.png")
+      else
+        img(src="./images/prize-shortlisted-mobile-en.png")
