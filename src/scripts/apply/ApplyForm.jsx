@@ -1,6 +1,5 @@
 import React from 'react';
 import Input from './Input';
-import SendCodeBtn from './SendCodeBtn';
 import SelectCity from './SelectCity';
 import { translate } from 'react-i18next';
 
@@ -12,7 +11,6 @@ class ApplyForm extends React.Component {
   state = {
     name: { value: '', status: 'default', msg: '', rules: ['required'] },
     phone: { value: '', status: 'default', msg: '', rules: ['required', 'phone'] },
-    code: { value: '', status: 'default', msg: '', rules: ['required'] },
     email: { value: '', status: 'default', msg: '', rules: ['required', 'email'] },
     company: { value: '', status: 'default', msg: '', rules: ['required'] },
     job: { value: '', status: 'default', msg: '', rules: ['required'] },
@@ -22,7 +20,7 @@ class ApplyForm extends React.Component {
   }
 
   onSubmit = () => {
-    ['name', 'code', 'email', 'company', 'job', 'industry', 'city', 'intro'].forEach(type => {
+    ['name', 'phone', 'email', 'company', 'job', 'industry', 'city', 'intro'].forEach(type => {
       this.verify(this.state[type].value, type);
     })
   }
@@ -67,33 +65,13 @@ class ApplyForm extends React.Component {
             <div className="apply-form__left">
               {t('form.p2')}
             </div>
-            <div className="apply-form__right apply-form__right--phone">
+            <div className="apply-form__right">
               <Input
                 placeholder={t('form.p10')}
                 onChange={value => this.valueChange(value, 'phone')}
                 value={phone.value}
                 status={phone.status}
                 msg={phone.msg}
-              />
-              <SendCodeBtn
-                axUrl="/apply.html"
-                axData={
-                  {number: phone.value}
-                }
-              />
-            </div>
-          </div>
-          <div className="apply-form__filed">
-            <div className="apply-form__left">
-              {t('form.p3')}
-            </div>
-            <div className="apply-form__right">
-              <Input
-                placeholder={t('form.p11')}
-                onChange={value => this.valueChange(value, 'code')}
-                value={code.value}
-                status={code.status}
-                msg={code.msg}
               />
             </div>
           </div>

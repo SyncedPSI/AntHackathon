@@ -20,6 +20,7 @@ $(() => {
     navState();
     toolbar();
   });
+
   runPage('page-apply', () => {
     apply();
   })

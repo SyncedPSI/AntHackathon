@@ -43,8 +43,9 @@
   },
   "mixin": {
     "solgan": {
+      "t0": "2017",
       "t1": "蚂蚁开发者大赛",
-      "t2": "Ant Technology Developer Challenge",
+      "t2": "ATEC developer challenge",
       "t3": "支付宝小程序开发者大赛",
       "t4": "Alipay Mini-program Hackathon"
     },

@@ -103,5 +103,21 @@ textarea {
 }
 
 .modal-layer-container .modal-layer-close {
-  display: none@hack;
+  right: -10px@hack;
+  top: -10px@hack;
+
+  &::after,
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    content: 'X';
+    font-size: 18px;
+    display: block;
+    transform: none;
+    top: 4px;
+    left: 8px;
+    height: 0;
+  }
 }

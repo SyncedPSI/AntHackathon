@@ -11,18 +11,18 @@
     "zh": "Chinese"
   },
   "home": {
-    "title": "Ant Technology Developer Challenge",
+    "title": "ATEC developer challenge",
     "banner": {
       "applyBtn": "Apply now！",
       "applyHint": " Apply for ATDC 2017 by Sep.",
-      "intro": "/* To solve the greatest challenges of today and tomorrow, <br/>we believe all of the developers share this common goal in the internet world. <br/>May the technology be with us.*/ "
+      "intro": "/* Christopher Columbus’ voyage across the Atlantic in 1492 secured his fame as an explorer in the Age of Discovery. <br />Now in the Age of the Internet, developers are the new explorers. <br /> Technology is becoming the driving force in changing the world. <br />Developers are landing the land of the new and sowing the seeds for the future. */ "
     }
   },
   "intro": {
-    "title": "ABOUT ATDC 2017",
+    "title": "ABOUT ATEC 2017",
     "title2": "ABOUT ANT'S TECHNOLOGY PLATFORM",
     "p1": "Originated from the online payment service Alipay, the Ant Financial Services Group is focused on serving small and micro enterprises, as well as consumers. With the vision “bring small and beautiful changes to the world,” Ant Financial is dedicated to building an open ecosystem of Internet thinking and technologies while working with other financial institutions to support the future financial needs of society. To date, a wide range of digital financial services is provided by Ant Financial to over 450 million users in China and beyond, including but not limited to Alipay, Ant Fortune, ANTSDAQ, Zhima Credit, MYbank, Yu'e Bao, Ant Credit Pay (“Huabei”), Ant Cash Now (“Jiebei”), My Loan, etc.",
-    "p2": "To further boost Ant's inclusive financial services combining with the Alipay Mini-program infrastructure, the Ant Technology Developer Challenge 2017 (ATDC 2017) is launched by Ant Financial pitched to all the developer individuals and business enterprises. Innovations and solutions for the improved financial application experience is expected during ATDC 2017 with the theme of “Fin-Tech & Future Life”."
+    "p2": "To further boost Ant's inclusive financial services combining with the Alipay Mini-program infrastructure, the ATEC developer challenge 2017 (ATDC 2017) is launched by Ant Financial pitched to all the developer individuals and business enterprises. Innovations and solutions for the improved financial application experience is expected during ATDC 2017 with the theme of “Fin-Tech & Future Life”."
   },
   "schedule": {
     "title": "SCHEDULE"
@@ -43,7 +43,8 @@
   },
   "mixin": {
     "solgan": {
-      "t1": "Ant Technology <br/>Developer Challenge",
+      "t0": "ATEC 2017",
+      "t1": "Developer Challenge",
       "t2": "",
       "t3": "Alipay Mini-program Hackathon",
       "t4": ""
@@ -54,7 +55,7 @@
     }
   },
   "apply": {
-    "title": "Apply now！- Ant Technology Developer Challenge",
+    "title": "Apply now！- ATEC developer challenge",
     "program": "Programming Contest",
     "creative": "Creativity Challenge"
   },
