@@ -93,7 +93,7 @@ gulp.task('watch', () => {
 });
 
 gulp.task('zip', () => {
-  gulp.src('./dist/*')
+  gulp.src('./dist/**/*')
 		.pipe(zip('dist.zip'))
 		.pipe(gulp.dest('./'))
 });
