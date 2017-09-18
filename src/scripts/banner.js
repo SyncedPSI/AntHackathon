@@ -4,7 +4,7 @@ import countdown from 'countdown';
 const format = v => v < 10 ? `0${v}` : v;
 
 const banner = () => {
-  const end = new Date(2017, 8, 25);
+  const end = new Date(2017, 9 - 1, 15);
 
   const $countdownElem = $('#js-countdown');
   const $daysElem = $countdownElem.find('.days-num');
@@ -13,7 +13,14 @@ const banner = () => {
   const $secsElem = $countdownElem.find('.secs-num');
 
   const countId = setInterval(() => {
-    const duration = countdown(new Date(), end);
+    const now = new Date()
+    const duration = countdown(now, end);
+
+    if (duration.value <= 0) {
+      clearInterval(countId)
+      return;
+    };
+
     $daysElem.text(format(duration.days));
     $hrsElem.text(format(duration.hours));
     $minsElem.text(format(duration.minutes));
