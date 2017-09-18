@@ -9,9 +9,10 @@ section.category.banner#banner
       span.mins-num.item(data-title="MINUTES") 00
       span :
       span.secs-num.item(data-title="SECONDS") 00
-    a.banner__apply(href=applyUrl  target="_blank")
+    .banner__apply
       | #{$t.home.banner.applyBtn}
     .banner__hint.t-pink
-      | &lt;&lt;&lt; #{$t.home.banner.applyHint} &gt;&gt;&gt;
+      //      
+        | &lt;&lt;&lt; #{$t.home.banner.applyHint} &gt;&gt;&gt;
     .banner__intro.t-pink
       p !{$t.home.banner.intro}

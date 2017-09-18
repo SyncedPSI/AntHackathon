@@ -3,11 +3,12 @@ header.header#site-header
     a.header__logo(href="javascript:;")
     .header__right
       nav.header__nav.nav
-        a.nav__item(href=`${homeUrl}#banner`, data-index="0")=$t.header.nav.n1
-        a.nav__item(href=`${homeUrl}#intro`, data-index="1")=$t.header.nav.n2
-        a.nav__item(href=`${homeUrl}#schedule`, data-index="2")=$t.header.nav.n3
-        a.nav__item(href=`${homeUrl}#rules`, data-index="3")=$t.header.nav.n4
-        a.nav__item(href=`${homeUrl}#sponsor`, data-index="4")=$t.header.nav.n5
+        a.nav__item.scroll-link(href=`${homeUrl}#banner`, data-index="0")=$t.header.nav.n1
+        a.nav__item.scroll-link(href=`${homeUrl}#intro`, data-index="1")=$t.header.nav.n2
+        a.nav__item.scroll-link(href=`${homeUrl}#schedule`, data-index="2")=$t.header.nav.n3
+        a.nav__item.scroll-link(href=`${homeUrl}#rules`, data-index="3")=$t.header.nav.n4
+        a.nav__item.scroll-link(href=`${homeUrl}#sponsor`, data-index="4")=$t.header.nav.n5
+        a.nav__item(href=applyUrl)=$t.header.nav.n6
       .header__other
         .header__local
           if $t.lang !== "en"

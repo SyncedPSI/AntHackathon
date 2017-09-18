@@ -4,7 +4,9 @@ import countdown from 'countdown';
 const format = v => v < 10 ? `0${v}` : v;
 
 const banner = () => {
-  const end = new Date(2017, 9 - 1, 15);
+  // Current month
+  const month = 10;
+  const end = new Date(2017, month - 1, 12, 8);
 
   const $countdownElem = $('#js-countdown');
   const $daysElem = $countdownElem.find('.days-num');

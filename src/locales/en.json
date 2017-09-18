@@ -6,15 +6,16 @@
       "n2": "ABOUT",
       "n3": "SCHEDULE",
       "n4": "CHALLENGES & PRIZES",
-      "n5": "ORGANIZERS"
+      "n5": "ORGANIZERS",
+      "n6": "APPLY"
     },
     "zh": "Chinese"
   },
   "home": {
     "title": "ATEC developer challenge",
     "banner": {
-      "applyBtn": "Apply now！",
-      "applyHint": " Apply for ATEC Developer Challenge 2017 by Sep.",
+      "applyBtn": "Field sprint!",
+      "applyHint": "",
       "intro": "/* Christopher Columbus’ voyage across the Atlantic in 1492 secured his fame as an explorer in the Age of Discovery. <br />Now in the Age of the Internet, developers are the new explorers. <br /> Technology is becoming the driving force in changing the world. <br />Developers are landing the land of the new and sowing the seeds for the future. */ "
     }
   },

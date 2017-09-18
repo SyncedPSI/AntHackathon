@@ -6,7 +6,7 @@ const navState = () => {
   const $nav = $('.nav');
 
   const $item = $('body').find('.category');
-  const $category = $nav.find('a');
+  const $category = $nav.find('a.scroll-link');
 
   let activeIndex = 0;
   $category.eq(0).addClass('active');
